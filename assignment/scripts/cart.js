@@ -75,6 +75,25 @@ console.log(`Should return true`, isFull());
 console.log(addItem(`Wine`));
 
 
+function removeItem(remove) {
+    for (i = 0; i < basket.length; i++){
+        if (basket.indexOf(remove) != -1){
+            basket.splice(basket.indexOf(remove), 1);
+            return remove;
+        }
+        else {
+            return null;
+        }
+    }
+}
+
+console.log(`Current basket: `, basket);
+console.log(`This item was removed: `, removeItem(`Butter`));
+console.log(`New contents of the basket: `, basket);
+console.log(`Should return null`, removeItem(`Beer`));
+console.log(`Current basket: `, basket);
+
+
 
 
 // DO NOT MODIFY
