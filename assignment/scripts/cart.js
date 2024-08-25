@@ -3,10 +3,26 @@ console.log('***** Cart Functions *****');
 // We want to see how you are testing your code!!!
 
 let basket = [];
+const maxItems = 5;
 
+
+// Original addItem function
+// function addItem(item) {
+//     basket.push(item);
+//     return true;
+// }
+
+
+// Stretch addItem function
 function addItem(item) {
-    basket.push(item);
-    return true;
+    if (isFull() === false){
+        basket.push(item);
+        return true;
+    }
+    else {
+        console.log(`Basket is already full, will return false`);
+        return false;
+    }
 }
 
 
@@ -34,6 +50,31 @@ function empty() {
 
 empty();
 console.log(`Basket should be empty`, empty(), basket);
+
+
+
+
+
+function isFull() {
+    if (basket.length < maxItems){
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+console.log(`Should return false`, isFull());
+addItem(`Pasta`);
+addItem(`Marinara Sauce`);
+addItem(`Parmesan`);
+addItem(`Butter`);
+addItem(`Garlic Bread`);
+console.log(`Should return true`, isFull());
+
+console.log(addItem(`Wine`));
+
+
 
 
 // DO NOT MODIFY
